@@ -104,12 +104,6 @@
           #place(
             right + horizon,
             [
-              #box(link("https://github.com/LucaCiucci/tesi-triennale", image("img/github/github-mark-white.svg", height: 1em))) #h(0.5em) #box(link("https://creativecommons.org/publicdomain/zero/1.0/", stack(dir: ltr, image("img/CC/cc.svg", height: 1em), image("img/CC/zero.svg", height: 1em))))
-              #h(0.5em)
-              #box(
-                //width: 3.5em,
-                [#page_number / #n_pages],
-              )
               #box(
                 width: 4em,
                 //stroke: red,
@@ -140,6 +134,14 @@
                   )
                 },
               )
+              #box(
+                //width: 3.5em,
+                [#page_number / #n_pages],
+              )
+              #h(1.0em)
+              #box(link("https://creativecommons.org/publicdomain/zero/1.0/", stack(dir: ltr, image("img/CC/cc.svg", height: 1em), image("img/CC/zero.svg", height: 1em))))
+              #h(0.5em)
+              #box(link("https://github.com/LucaCiucci/tesi-triennale", image("img/github/github-mark-white.svg", height: 1em)))
             ],
           )
         ])
@@ -195,7 +197,7 @@
         top: header_height + header_stroke_width + 5pt,
         bottom: header_height + header_stroke_width,
         left: 15pt,
-        right: logo_with * 1.5 + header_stroke_width * 2,
+        right: logo_with * 1.5 + header_stroke_width * 2 + 1em,
       ),
       body
     )

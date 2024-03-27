@@ -41,7 +41,8 @@
   section: ([QFT], ),
 )[
   = Quantum Field Theory
-  #lorem(40)
+  - #lorem(10) $integral x^2 = 0$ #lorem(10) 
+  - #lorem(20) $ bold(nabla) dot arrow(E) prop partial_bold(x) integral.vol d bold(x) rho(r, phi, theta) $
 ]
 
 #slide(
@@ -141,6 +142,14 @@
 
 #slide[
   ciao
+]
+
+#raw-slide(
+  section: ([Outro],),
+  counter-name: "intro-slides",
+  counter-display: "I",
+)[
+  outro
 ]
 
 //ciao
