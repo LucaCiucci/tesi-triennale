@@ -3,6 +3,29 @@
 
 #let page_scale = 35pt
 
+//#let __slide-final-only = state("slide-final-only", false)
+#let slide-final-only = if sys.inputs.keys().contains("compact-slides") {
+  lower(sys.inputs.compact-slides) == "true"
+} else {
+  false
+}
+
+#let slide-final-result = if sys.inputs.keys().contains("final") {
+  lower(sys.inputs.final) == "true"
+} else {
+  false
+}
+
+#let sub-slide-index = state("sub-slide-index", 0)
+
+#let config-slides(
+  //final-only: none,
+) = {
+  //if final-only != none {
+  //  __slide-final-only.update(final-only)
+  //}
+}
+
 #let data-laurea = datetime(
   year: 2024,
   month: 7,
@@ -34,6 +57,7 @@
   width: 16 * page_scale,
   height: 9 * page_scale,
   margin: 0pt,
+  flipped: false,
   {
     let header_height = 17pt
     let header_stroke_width = 2pt
@@ -44,7 +68,7 @@
     }
 
     let n_pages = context counter("slide").final().at(0)
-    let page_number = counter(counter-name).display(counter-display)
+    let slide_number_display = counter(counter-name).display(counter-display)
 
     if section.len() > 0 {
       let section_heading = heading(section.last(), supplement: [section], level: section.len())
@@ -100,7 +124,7 @@
         height: header_height,
         align(horizon, [
           #set text(white, 10pt)
-          Luca Ciucci - Laurea Triennale #data-laurea-d
+          Luca Ciucci - Appello Laurea Triennale #data-laurea-d
           #place(
             right + horizon,
             [
@@ -136,7 +160,7 @@
               )
               #box(
                 //width: 3.5em,
-                [#page_number / #n_pages],
+                [#slide_number_display / #n_pages],
               )
               #h(1.0em)
               #box(link("https://creativecommons.org/publicdomain/zero/1.0/", stack(dir: ltr, image("img/CC/cc.svg", height: 1em), image("img/CC/zero.svg", height: 1em))))
@@ -151,7 +175,7 @@
     place(
       right + top,
       dx: -2pt,
-      dy: logo_with,
+      dy: logo_with + 5pt,
       rect(
         width: logo_with * 1.5,
         stroke: none,
@@ -165,7 +189,7 @@
               if section.len() > 0 and it.element.body == section.last() {
                 text(blue, sym.circle.filled + h(0.5em) + it.body)
               } else {
-                sym.circle.stroked + h(0.5em) + it.body
+                context if counter(page).at(it.element.location()).at(0) < counter(page).get().first() { sym.circle.filled } else { sym.circle.stroked } + h(0.5em) + it.body
               },
             )
           )
@@ -199,36 +223,63 @@
         left: 15pt,
         right: logo_with * 1.5 + header_stroke_width * 2 + 1em,
       ),
-      body
+      {
+        show link: link => text(link, rgb("#0000CD").darken(50%))
+        show ref: ref => text(ref, rgb("#0000CD").darken(50%))
+        body
+      },
     )
   }
 )
 
+#let current-step() = [#sub-slide-index.get()]
+
 #let steps = (
-  step,
+  switch: false,
+  skip: 0,
   ..pieces
 ) => {
-  pieces
-    .pos()
-    .enumerate()
-    .map(it => if it.at(0) <= step { it.at(1) } else { hide(it.at(1)) })
-    .join()
+  locate(loc => {
+    let step = sub-slide-index.at(loc)
+    if switch {
+      pieces
+        .pos()
+        .enumerate()
+        .map(it => if it.at(0) + skip == step or (step > it.at(0) and it.at(0) + 1 == pieces.pos().len() + skip) { it.at(1) } else { [] })
+        .join()
+    } else {
+      pieces
+        .pos()
+        .enumerate()
+        .map(it => if it.at(0) + skip <= step { it.at(1) } else { hide(it.at(1)) })
+        .join()
+    }
+  })
 }
 
-#let slide = (
+#let slide(
   section: (),
   steps: (),
   body,
-) => {
-  if type(body) == "content" {
+) = {
+  if steps == () {
+    return raw-slide(
+      section: section,
+      body,
+    )
+  }
+  if type(steps) == "integer" {
+    steps = range(steps)
+  }
+  if slide-final-only {
+    let step = steps.last()
     raw-slide(
       section: section,
-      body
+      counter-increment: true,
+      new-section: true,
+      [#sub-slide-index.update(steps.len())] + body,
     )
-  } else if type(body) == "function" {
-    if type(steps) == "integer" {
-      steps = range(steps)
-    }
+  } else {
     for (index, step) in steps.enumerate() {
       raw-slide(
         section: section,
@@ -236,10 +287,89 @@
         new-section: step == steps.last(),
         sub-step: index,
         sub-steps: steps.len(),
-        body(step),
+        [#sub-slide-index.update(index)] + body,
       )
     }
-  } else {
-    panic("Invalid slide body")
   }
+}
+
+#let non-slide(
+  color: gray,
+  header: [HEADER],
+  body
+) = if not slide-final-result {
+  page(
+    width: 16 * page_scale,
+    height: 9 * page_scale,
+    margin: 1cm,
+    flipped: false,
+    header: [
+      #rect(
+        width: 100%,
+        stroke: color + 2pt,
+        radius: 2pt,
+        fill: color.lighten(80%),
+        align(center)[
+          #text(black, header)
+        ]
+      )
+    ],
+    {
+      set heading(numbering: "1.")
+      set math.equation(numbering: "(1)")
+      body
+    }
+  )
+} else {}
+
+#let note(body) = non-slide(
+  color: green,
+  header: [#emoji.book.open *Note* #emoji.book.open],
+  body
+)
+
+#let script(body) = non-slide(
+  color: blue,
+  header: [#emoji.scroll *Script* #emoji.scroll],
+  text(size: 1.25em, body)
+)
+
+#let abstract(body) = non-slide(
+  color: purple,
+  header: [#emoji.page *Long Abstract* #emoji.page],
+  {
+    import "@preview/wordometer:0.1.2"
+    let n-chars = wordometer.extract-text(body).trim().len()
+
+    let expected = 3000
+    let tolerance = 300
+    
+    body
+
+    place(bottom + right)[
+      Lunghezza: #if calc.abs(n-chars - expected) < tolerance { text(green)[#n-chars] } else { text(red)[#n-chars] } / #expected #sym.plus.minus #tolerance caratteri
+    ]
+  }
+)
+
+#let cols(..columns) = {
+  // take positional list:
+  let columns = columns.pos();
+
+  let n = columns.len();
+
+  let columns = columns.map(it => box(
+    //fill: red,
+    //stroke: red,
+    width: 100% / n,
+    height: 100%,
+    it
+  ))
+
+
+  stack(
+    dir: ltr,
+    spacing: 5pt,
+    ..columns
+  )
 }

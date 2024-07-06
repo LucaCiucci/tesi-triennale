@@ -1,0 +1,28 @@
+
+yakov:
+  type: Book
+  title: Megnetic Monopoles
+  author: Yakov M. Shnir
+  date: 2005
+  publisher: Springer
+  #isbn: 978-3-540-22510-1
+
+tesi-mai:
+  type: Thesis
+  #title: Search for Magnetic Monopoles in the ATLAS Detector at the LHC
+  title: Search for Magnetic Monopoles with the CMS experiment at the Large Hadron Collider (LHC)
+  author: Mai Muhammed Hassan El Sawy
+  url: https://cds.cern.ch/record/2744867/files/CERN%20THESES%202020%20191.pdf
+
+squid:
+  type: Article
+  title: Search for monopoles using superconducting quantum interference device (SQUID)
+  author: Y.H. Yuan
+  url: https://arxiv.org/abs/physics/0512220
+  date: 2006
+
+MACRO-giacomelli:
+  type: Article
+  title: THE MACRO EXPERIMENT AT GRAN SASSO
+  author: GIORGIO GIACOMELLI
+  url: https://cds.cern.ch/record/305763/files/SCAN-9606169.pdf
