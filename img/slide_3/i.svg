@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+    <!--rect width="10000" height="1000" fill="white" /-->
+    <!--line x1="0" x2="100" y1="50" y2="50" stroke="black" />
+    <line x1="50" x2="50" y1="0" y2="100" stroke="black" /-->
+    <defs>
+        <g id="small" transform="translate(0 -5)">
+            <path d="
+                M 10 50
+                A 40.25 40 180 1 0 90 50
+                A 30.0 10 180 1 1 10 50
+            " stroke="black"/>
+        </g>
+        <g id="large" transform="translate(0 -5)">
+            <path d="
+                M 10 50
+                A 40.25 40 180 1 0 90 50
+                A 30.0 10 180 1 0 10 50
+            " stroke="black"/>
+        </g>
+    </defs>
+
+    <style>
+        path {
+            stroke-width: 0.75;
+        }
+        use.n {
+            fill: rgba(255, 0, 0, 0.175);
+        }
+
+        use.s {
+            fill: rgba(0, 0, 255, 0.175);
+        }
+    </style>
+
+    <g>
+        <use href="#large" x="0" y="0" class="s" />
+        <use href="#small" x="0" y="0" class="s" />
+    </g>
+
+    <g class="s" transform="scale(1 -1)" transform-origin="center">
+        <use href="#large" x="0" y="0" class="n" />
+        <use href="#small" x="0" y="0" class="n" />
+    </g>
+
+</svg>

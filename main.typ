@@ -4,6 +4,7 @@
 #set text(size: 9pt)
 
 #set math.equation(supplement: "Eq.")
+//#show math.equation: set text(9pt)
 
 #set document(
   title: title,
@@ -184,7 +185,7 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
       delta S = e delta lambda = 2 pi n ==> #rect(radius: 3pt, stroke: red)[$mu eq.def e g = n\/2$]
     $)<quantization-condition>
     - La presenza di un singolo monopolo nell'universo impone la quantizzazione della carica! @yakov
-    - Un altro modo semplice è imporre la non fisicità della stringa di dirac, i.e. la fase accumulata nel path integral intorno ad essa deve essere $2 pi n$, si ritrova @quantization-condition. (TODO forse è meglio riportare anche l'approccio eq. 2.9 dello Yakov).
+    - Un altro modo semplice è imporre la non fisicità della stringa di dirac, i.e. la fase accumulata nel path integral intorno ad essa deve essere $2 pi n$, si ritrova @quantization-condition.// (TODO forse è meglio riportare anche l'approccio eq. 2.9 dello Yakov).
     - Approccio Saha: /*la correzione al momento angolare non deve essere osservabile*/ $
     tilde(bold(L)) = bold(L) + text(#red.darken(20%), e g hat(r)) <-- #[imponendo auto [semi-]interi]
     $
@@ -192,15 +193,14 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
     = Generalizzazione 
     - Condizione di Schwinger-Zwanzinger per una coppia di dyoni invece di una $e-g$: $
     e_1 g_2 - e_2 g_1 = n in ZZ
-    $
-    - impone la quantizzazione sia della carica elettrica che magnetica: #math.equation(numbering: "(1)", block: true, $
+    $ impone la quantizzazione sia della carica elettrica che magnetica: #math.equation(numbering: "(1)", block: true, $
     e + i g = e_0 (m tau + n); space tau = theta / (2 pi) + i n_0/e_0^2
     $) <dyon-quantization>
     - La simmetria $S O(2)$ è rotta e i dyoni giaciono su di un reticolo definito da  @dyon-quantization, di cui le cariche elettriche corrispondono a $m = 0$
-    #figure[#rect(width: 80%, height: 40%)[
-      Da ridisegnare:
-      #image("img/slide_2/image_1.png", width: 70%)
-    ]]
+    #figure[
+      //Da ridisegnare:
+      #place(bottom + center, dy: 38mm, image("img/slide_2/image_2.png", width: 75%))
+    ]
   ]
 ]
 
@@ -227,9 +227,9 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
   section: ([Soluzione topologica dei monopoli abeliani],),
   cols[
     == Monopolo di Wu-Yang
-    - cerchiamo una soluzione non singolare
+    - Cerchiamo una soluzione non singolare
     - dobbiamo rinunciare ad avere un solo set di coordinate
-    - Possiamo usare ad esempio il ricoprimento: $
+    - possiamo usare ad esempio il ricoprimento: $
     cases(
       bold(A)^N = g (1 - cos theta)/(r sin theta) hat(bold(e))_phi,
       bold(A)^S = -g (1 + cos theta)/(r sin theta) hat(bold(e))_phi,
@@ -237,23 +237,22 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
     $ connessi da una gauge
     - calcolando la fase guadagnata da una funzione d'onda (a singolo valore) nella regione di sovrapposizione, si ha nuovamente la regola di quantizzazone della carica
 
-    #figure[#rect(width: 60%, height: 30%)[
-      Da ridisegnare:
-      #image("img/slide_3/image_1.png", width: 50%)
-    ]]
+    #figure[
+      #image("img/slide_3/image_2.png", width: 37%)
+    ]
 
-    - fornalizzabile in modo naturale con tramite nozioni di topologia e geometria differenziale
+    - Formalizzabile in modo naturale tramite nozioni di topologia e geometria differenziale
   ][
     === Topologia
-    - descriviamo lo spazio ed il campo come un fibrato: localmente $cal(M) = X times F$ (triviale se vale per tutto lo spazio)
-    - punto chiave: globalmente, la topologia è definita dalle funzioni di transizione /*delle mappe*/ dei ricoprimenti
-    - la "forma geometrica" deve essere definita tramite la metrica e la connessione
-    - una classificazione sono le classi caratteristiche di Chern $c_k$
-    - per $c_0 = 0$ il fibrato è triviale e può essere ricoperto da una sola carta. Il pontenziale ed il tensore degli stress è definito globalmente. Questo è il caso delle equazioni di Maxwell usuali.
-    - La situazione cambia se togliamo un punto: $R^3\/{0}$ è omotopo a $S^2$ e servono almento due ricoprimenti. Infatti/conseguenza $F$ è una forma chiusa ma non esatta.
+    - Descriviamo lo spazio ed il campo come un fibrato: localmente $cal(M) = X times F$ (triviale se vale per tutto lo spazio)
+    - Punto chiave: globalmente, la topologia è definita dalle funzioni di transizione /*delle mappe*/ dei ricoprimenti
+    - La "forma geometrica" deve essere definita tramite la metrica e la connessione
+    - Una classificazione sono le classi caratteristiche di Chern $c_k$
+    - Per $c_0 = 0$ il fibrato è triviale e può essere ricoperto da una sola carta. Il pontenziale ed il tensore degli stress è definito globalmente. Questo è il caso delle equazioni di Maxwell usuali.
+    - La situazione cambia se togliamo un punto: $R^3\/{0}$ è omotopo a $S^2$ e servono almeno due ricoprimenti. Infatti/conseguenza $F$ è una forma chiusa ma non esatta.
     - In questo caso la topologia è definita da $c_1 eq.def n$ (_carica topologica_), per $c_1 = 0$ siamo nel caso triviale usuale mentre $c_1 = 1$ ad esempio è descrivibile tramite il fibrato di Hopf
     === Conclusioni
-    - un monopole abeliano può esistere se la topologia dell'universo non è triviale
+    - Un monopolo abeliano può esistere se la topologia dell'universo non è triviale
   ]
 )
 
@@ -312,11 +311,13 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
 
 #slide(
   section: (/*[Monopoli abeliani], */[Formulazione relativistica],),
+  {
+  show math.equation: set text(11pt)
   cols[
     - Possiamo generalizzare la costruzione riscrivendo le equazioni di maxwell e la dinamica in modo simmetrico: $
     diff_mu F^(mu nu) = j^((e) nu), space & space diff_mu tilde(F)^(mu nu) = j^((g) nu)
     $ e la dinamica: $
-    m_e (d u_mu^(e))/(d tau^(e)) = e F_(mu nu) u^((e) nu), space & space m_e (d u_mu^(g))/(d tau^(g)) = e F_(mu nu) u^((g) nu),
+    m_e (d u_mu^((e)))/(d tau^((e))) = e F_(mu nu) u^((e) nu), space & space m_g (d u_mu^((g)))/(d tau^((g))) = e F_(mu nu) u^((g) nu),
     $
     - la costruzione dei potenziali non è banale, dirac propone: $
     F_(mu nu) = diff_mu A_nu - diff_nu A_mu text(#red.darken(40%), - tilde(G)_(mu nu)) space, space diff^(mu) G_(mu nu) = j_nu^((g))
@@ -332,13 +333,14 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
     - è necessaria una condizione di consistenza per mantenere il numero di gradi di libertà $
     diff_mu A_nu - diff_nu A_mu + epsilon_(mu nu rho sigma) diff^sigma tilde(A)^rho = 0
     $
-    - ritroviamo il caso usuale con una rotazione di $theta = -arctan(g\/e)$ (cfr @todo-simm-1): $
+    - Ritroviamo il caso usuale con una rotazione di $theta = -arctan(g\/e)$ (cfr @todo-simm-1): $
     D: cases(
       A_mu -> A_mu cos theta - tilde(A)_mu sin theta,
       tilde(A)_mu -> A_mu sin theta + tilde(A)_mu cos theta,
     )
     $
   ]
+  }
 )
 
 #script[
@@ -400,13 +402,13 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
     - Alcuni esperimenti sono sfruttano i raggi cosmici per esplorare le energie più alte
     - Una possibilità e quella di misurare direttamente i campi magnetici tramite anelli superconduttori oppure SQUIDs (Superconducting Quantum Interference Devices @squid)
   ][
-    - Ricerca tramite rivelatori Cherenkov (AMANDA) guardano particolari segnature dovute alla alta massa prevista dalle GUTs @tesi-mai all'alta energia persa per ionizzazione, considerando anche il filtraggio dovuto al campo magnetico terrestre @MACRO-giacomelli
-    - TODO esperimento #link("https://arxiv.org/pdf/0707.1691")[MACRO] che devo ancora capire
+    - Ricerca tramite rivelatori Cherenkov (AMANDA) guardano particolari segnature dovute alla alta massa prevista dalle GUTs @tesi-mai ed all'alta energia persa per ionizzazione, considerando anche il filtraggio dovuto al campo magnetico terrestre @MACRO-giacomelli
+    //- TODO esperimento #link("https://arxiv.org/pdf/0707.1691")[MACRO] che devo ancora capire
     - L'esperimento ANITA cerca invece segnali radio dovuti all'interazione con il ghiaccio Antartico di monopoli ultra-relativistici
 
     === Ricerca nei collisori
     - L'LHC è il candidato più adatto poiché la scala di energia potrebbe essere elevata ma alcune teorie suggeriscono tali particelle anche ad energie $~T e V$ @tesi-mai
-    - Essendo HIPs, la ricerca di un'osservazione diretta di LLPs è possibile cercando delle tracce molto strette sui calorimetri elettromagnetico (ECAL), con la condizione che la traccia nei calorimetri adronici (HCAL) sia piccola o nulla
+    - Essendo HIPs, la ricerca di un'osservazione diretta di LLPs è possibile cercando delle tracce molto strette sui calorimetri elettromagnetici (ECAL), con la condizione che la traccia nei calorimetri adronici (HCAL) sia piccola o nulla
     - essendo HIPs è possibile ricercare particolari traiettorie nei campi magnetici
   ]
 )
