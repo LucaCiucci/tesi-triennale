@@ -75,7 +75,7 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
 ]
 
 #script[
-  Buonasera, oggi vi parlerò del tema dei *monopoli magnetici* e di alcune delle loro *proprietà teoriche* deducibili dalle *equazioni di Maxwell* e dalla *Meccanica Qauntisitica*.
+  Buongiorno, oggi vi parlerò del tema dei *monopoli magnetici* e di alcune delle loro *proprietà teoriche* deducibili dalle *equazioni di Maxwell* e dalla *Meccanica Qauntisitica*.
 ]
 
 // ================================================================
@@ -116,21 +116,42 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
   ]
 )
 
+//#script[
+//  Le equazioni di Maxwell presentano una _dualità_ intrinseca che suggerisce una possibile simmetria tra carica elettrica e magnetica. #strike[In particolare viene quasi naturale chiedersi se è possibile scrivere l'*equazione di Poisson* per la *carica magnetica*, e questo lo possiamo fare.] In particolare è naturale chiedersi se è possibile scrivere e risolvere l'equazione di Poisson per la carica magnetica, questo non pone particolare problemi.
+//
+//  In ambito classico la prima peculiarità che può venire in mente è la conservazione del *momento angolare*, che di fatti *non si conserva* come possiamo vedere analizzando un problema di *scattering $e-g$*. Infatti la posizione relativa di muove su di un cono, con un *potenziale efficacie sempre repulsivo* #strike[, quindi chiaramente non si può conservare.]
+//
+//  In realtà #strike[con dei semplici conti #footnote[basta moltiplicare vettorialmente per $arrow(r)$ (RIVEDI)]] in meccanica classica si può trovare una *diversa definizione* del momento angolare *conservato*, comprendente un termine aggiuntivo/*$~e g hat(r)$*/.\
+//  //Comunque questo pezzo non propriamente piacevole non 
+//  Comunque notiamo che *l'usuale momento angolare è conservato* se si considera anche il contributo del campo elettromagnetico #strike[tramite il formalismo del vettore di Poynting,], e questo *è* un aspetto *desiderabile* poiché il *sistema è invariante per rotazioni*.
+//
+//  E' poi naturale chiedersi come sarebbe fatto il potenziale ti tale oggetto, ed una soluzione particolarmente semplice è il *potenziale di Dirac*, che però risulta singolare su di una stringa.\
+//  Altri potenziali uni-valori hanno tutti una singolarita su almeno una stringa e questo deriva dal fatto che la divergenza del rotore è nulla. Diverse soluzioni del potenziale #strike[(come ad esempio quello di #text(red)[?????????] che ha la singolarità su un piano)] sono comunque connesse a quello di Dirac tramite #strike[combinazioni di] trasformazioni di gauge.\
+//  Comunque il fatto che la stringa dipenda dalla gauge ci dice che non è fisica ma un artefatto della soluzione. #strike[se *richiediamo l'invarianza di gauge*].
+//
+//  Un'altra osservazione interessante che ci spinge ad esplorare questo tema è il fatto che le equazioni di Maxwell presentano una simmetria $U(1)$ #strike[se combiniamo i campi come parte reale e immaginaria], #strike[o comunque $S O(2)$ se vogliamo vedere che le equazioni di Maxwell sono invarianti per nello spazio $(E, B)$].\
+//  Si può comunque dimostrare esplicitamente che le equazioni di Eulero Lagrange /*dell'usuale Lagrangiana*/ per il campo libero sono invarianti sotto tale simmetria #strike[(da qui il termine di elettrodinamica abeliana)].
+//
+//  #place(bottom + right)[$approx$ 2 min]
+//]
+
 #script[
-  Le equazioni di Maxwell presentano una _dualità_ intrinseca che suggerisce una possibile simmetria tra carica elettrica e magnetica. In particolare viene quasi naturale chiedersi se è possibile scrivere l'*equazione di Poisson* per la *carica magnetica*, e questo lo possiamo fare.
+  Buongiorno, oggi vi parlerò del tema dei *monopoli magnetici* e di alcune delle loro *proprietà teoriche* deducibili dalle *equazioni di Maxwell* e dalla *Meccanica Qauntisitica*.
 
-  In ambito classico la prima peculiarità che può venire in mente è la conservazione del *momento angolare*, che di fatti *non si conserva*, come possiamo vedere analizzando un problema di *scattering $e-g$*, in cui la posizione relativa di muove su di un cono, con un *potenziale efficacie sempre repulsivo*, quindi chiaramente non si può conservare.
+  #line(length: 100%)
 
-  In realtà con dei semplici conti #footnote[basta moltiplicare vettorialmente per $arrow(r)$ (RIVEDI)] si può trovare una diversa definizione del momento angolare conservato, comprendente un termine aggiuntivo $~e g hat(r)$.\
-  //Comunque questo pezzo non propriamente piacevole non 
-  Comunque notiamo che *l'usuale momento angolare è conservato* se si considera anche il contributo del campo elettromagnetico tramite il formalismo del vettore di Poynting, e questo ci piace perché il sistema è invariante per rotazioni.
+  Le equazioni di Maxwell presentano una _dualità_ intrinseca che suggerisce una possibile simmetria tra carica elettrica e magnetica. In particolare è naturale chiedersi se è possibile scrivere e risolvere l'equazione di Poisson per la carica magnetica e questo non pone particolare problemi.
+
+  In ambito classico la prima peculiarità che può venire in mente è la conservazione del *momento angolare*, che di fatti *non si conserva* come possiamo vedere analizzando un problema di *scattering $e-g$* dove la posizione relativa di muove su di un cono.
+
+  In realtà in meccanica classica si può trovare una *diversa definizione* del momento angolare *conservato*, comprendente un termine aggiuntivo.\
+  Comunque notiamo che *l'usuale momento angolare è conservato* se si considera anche il contributo del campo elettromagnetico#footnote[Poynting], e questo *è* un aspetto *desiderabile* poiché il *sistema è invariante per rotazioni*.
 
   E' poi naturale chiedersi come sarebbe fatto il potenziale ti tale oggetto, ed una soluzione particolarmente semplice è il *potenziale di Dirac*, che però risulta singolare su di una stringa.\
-  Altri potenziali uni-valori hanno tutti una singolarita su almeno una stringa e questo deriva dal fatto che la divergenza del rotore è nulla. Altre soluzioni al potenziale (come ad esempio quello di #text(red)[?????????] che ha la singolarità su un piano) sono connessi a quello di Dirac tramite combinazioni di trasformazioni di gauge.\
-  Questo però ci dice che la stringa dipende dalla gauge, quindi se *richiediamo l'invarianza di gauge* troviamo che *la stringa non può essere fisica*.
+  Altri potenziali uni-valori hanno tutti una singolarita su almeno una stringa e questo deriva dal fatto che la divergenza del rotore è nulla.\
+  Comunque il fatto che la stringa dipenda dalla gauge ci dice che non è fisica ma un artefatto della soluzione.
 
-  Un'altra osservazione interessante è che le equazioni di Maxwell presentano una simmetria $U(1)$ se combiniamo i campi come parte reale e immaginaria, o comunque $S O(2)$ se vogliamo vedere che le equazioni di Maxwell sono invarianti per nello spazio $(E, B)$.\
-  Si può comunque dimostrare che le equazioni di Eulero Lagrange /*dell'usuale Lagrangiana*/ per il campo libero sono invarianti per tale simmetria.
+  Un'altra osservazione interessante che ci spinge ad esplorare questo tema è il fatto che le equazioni di Maxwell presentano una simmetria $U(1)$ e si può comunque mostrare esplicitamente che le equazioni di Eulero Lagrange per il campo sono invarianti sotto tale simmetria.
 
   #place(bottom + right)[$approx$ 2 min]
 ]
@@ -205,16 +226,17 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
 ]
 
 #script[
-  Se guardiamo il problema dell'interazione tra una carica elettrica e magnetica da un punto di vista quantistico, troviamo dei vincoli aggiuntivi.\
-  Infatti calcolando la variazione dell'azione, e imponendo che l'ampiezza $e^(i S)$ sia invariante di gauge, troviamo la seguente *regola di quantizzazione*.\
-  Questa è particolarmente interessante perché, come fa notare Dirac, ci dice che se anche un solo monopolo magnetico esiste nell'universo, allora la carica elettrica deve essere quantizzata semplicemente per consistenza!
+  *Se guardiamo il problema* dell'interazione tra una carica elettrica e magnetica *da un punto di vista quantistico*, troviamo dei *vincoli aggiuntivi*.\
+  Infatti calcolando la *variazione dell'azione*, e imponendo che *l'ampiezza $e^(i S)$* sia *invariante di gauge*, troviamo la seguente *regola di quantizzazione*.\
 
-  Ci sono altri modi per giungere alla stessa regola di quantizzazione, uno particolarmente interessante è quello di calcolare il *Path Integral* intorno alla stringa, che abbiamo richiesto non essere osservabile, dunque la fase accumulata deve essere multipla di $2 pi$.\
-  Un'altro approccio particolarmente interessante è quello di Saha, che richiede semplicemente che il momento angolare sia intero o semi-intero, e questo ci porta direttamente alla stessa conclusione.
+  Questa è particolarmente *interessante* perché l'*esistenza di* anche solo *un monopolo* nell'universo *spiegherebbe* la quantizzazione della *carica elettrica*.\
 
-  Ripetendo lo stesso ragionamento e considerando il problema dinamico dell'interazione tra due dyoni (ossia una coppia di cariche elettriche e magnetiche), troviamo una *più generale condizione di quantizzazione*, che impone contemporaneamente la quantizzazione sia della carica elettrica che magnetica.\  
-  Scopriamo che stavolta la presenza di un dyone nell'universo impone la quantizzazione di entrambe le cariche. $e$ e $g$ sono collegate e giacciono su un reticolo bidimensionale come quello mostrato in figura.\
-  Può sorgere la domanda del perché uno dei due assi è lungo $e$, ma questa è semplicemente una condizione che deriva dal fatto che sappiamo già esistere la carica elettrica equi-spaziata senza la carica magnetica, quindi nulla di particolare.
+  Ci sono altri modi per giungere alla stessa conclusione, uno notevole è quello di calcolare il *Path Integral* intorno alla stringa, che abbiamo *richiesto non essere osservabile*, dunque la *fase accumulata* deve essere multipla di $2 pi$.\
+  Un'altro approccio semplice è quello di richiede che il *momento angolare sia intero o semi-intero*, e questo ci porta direttamente alla stesso risultato.
+
+  Ripetendo il ragionamento e considerando il problema dinamico tra due dyoni (ossia particelle con carica elettrica e magnetica), troviamo una *più generale condizione*, che impone *contemporaneamente* la *quantizzazione* della carica *sia elettrica che magnetica*.\  
+  Scopriamo che stavolta la presenza di *un dyone nell'universo* impone la quantizzazione di entrambe le cariche: $e$ e $g$ *sono collegate* e giacciono su un *reticolo* come quello mostrato in figura.\
+  Può sorgere la domanda del perché uno dei due assi è proprio lungo la carica elettrica, ma come vedremo più avanti si può sempre rientrare in questo caso con una rotazione.
 
   #place(bottom + right)[$approx$ 1.5 min]
 ]
@@ -257,17 +279,16 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
 )
 
 #script[
-  Un'altra soluzione molto interessante è quella proposta da Wu e Yang, che consiste nel rappresentare il potenziale vettore tramite un ricoprimento dello spazio con due potenziali di Dirac al fine di eliminare la singolarità. Questo è possibile solo rinunciando alla richiesta di avere un solo set di coordinate, e questo non è strano perché succede in altre situazioni come quando proviamo a parametrizzare $S O(3)$.
+  Un'altro approccio #underline[molto interessante]#footnote[meglio] è quello proposto da Wu e Yang che consiste nel rappresentare la soluzione tramite un ricoprimento dello spazio con due potenziali di Dirac al fine di eliminare la singolarità *ma* ciò è possibile solo rinunciando alla richiesta di avere un solo set di coordinate.\
 
-  Se ci chiediamo come che fine fa la regola di quantizzazione, scopriamo che rimane comunque, ed è particolarmente semplice da ritrovare se richiediamo che le funzioni d'onda siano a singolo valore e calcoliamo la fase guadagnata nella regione di sovrapposizione. #footnote[DA RIVEDERE!!!]
+  Se ci chiediamo cosa ne è della regola di quantizzazione, scopriamo che rimane comunque, e si può ritrovare calcolando la fase guadagnata da una funzione d'onda nella regione di sovrapposizione.
 
-  L'approccio di Wu e Yang è particolarmente interessante perché si formalizza in modo naturale tramite nozioni di topologia e geometria differenziale.\
-  Infatti in generale possiamo descrivere il "bundle" di spazio e campo come un fibrato/* ("fiber bundle")*/, qui ad esempio $X$ è lo spazio ed $F$ il campo.
+  Questo approccio è particolarmente interessante perché si formalizza in modo naturale tramite nozioni di topologia e geometria differenziale:\
+  In generale possiamo descrivere il "*bundle*" di *spazio* e *campo* come un *FIBRATO*. Qui ad esempio $X$ è lo spazio ed $F$ il campo.\
+  La topologia non è definita solo da questo prodotto, ma anche dalle funzioni di transizione dei ricoprimenti.\
+  In particolare se possiamo *scrivere* il fibrato *come prodotto cartesiano*, allora il fibrato è *triviale* e possiamo usare un solo set di coordinate.
 
-  In generale la topologia non è definita solo da questo prodotto, ma dalle funzioni di transizione dei ricoprimenti.\
-  In particolare se possiamo scrivere il fibrato come prodotto cartesiano, allora il fibrato è triviale e possiamo usare un solo set di coordinate. Questo corrisponde all'avere un numero di Chern $c_0 = 0$.\
-
-  Una cosa particolare succede se togliamo un punto dello spazio (la sorgente), in tal caso la topologia è definita da $c_1 = n$, e questo corrisponde alla *carica topologica*, collegata a $mu = e g$.
+  Una cosa particolare succede se togliamo un punto dello spazio (la sorgente), in tal caso la topologia è definita da $c_1$ che corrisponde alla *carica topologica*, ossia $e$ per $g$.
 
   La conclusione notevole è che la presenza di un monopolo rende la topologia dell'universo non triviale!
 
@@ -344,19 +365,19 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
 )
 
 #script[
-  Un altro approccio interessante è quello di generalizzare la costruzione dei campi cercando di riscrivere la dinamica e le equazioni di Maxwell in modo simmetrico.\
-  Qui le prime due equazioni sono le equazioni di Maxwell con sorgente e quelle sotto rappresentano la dinamica.\
-  Questa non è una scelta fatta a caso, ma esplicitando le varie componenti si trovano le equazioni di maxwell come scritte nella prima slide.
+  Infine vorrei presentare un approccio differente che consiste nell'utilizzare due potenziali per eliminare il problema delle singolarità: si cerca prima di riscrivere le equazioni di Maxwell e la dinamica in modo simmetrico.\
+  Qui le prime due relazioni sono le equazioni di Maxwell con sorgente e quelle sotto rappresentano la dinamica.\
+  #strike[Queste relazioni si trovano esplicitando le varie componenti delle equazioni di Maxwell].
 
-  La costruzione dei potenziali non è banale, l'approccio proposto da Dirac è quello di scrivere il tensore di campo come derivata dei potenziali usuali e di un tensore aggiuntivo, per soddisfare la seconda equazione.
+  La costruzione dei potenziali non è banale, un approccio proposto da Dirac è quello di scrivere il tensore di campo come derivata dell'usuale quadri-potenziale e di un tensore aggiuntivo.\
+  Comunque si può dimostrare che in questo ambito altri approcci sono equivalenti.
 
-  Questo ci induce subito a pensare di introdurre due potenziali. Questi due potenziali potrebbero così descrivere i campi senza bisogno di singolarità.\
-  Questo comunque non è gratis, ma avendo introdotto variabili aggiuntive ($G_(mu nu)$), siamo ora costretti a introdurre un'equazione di consistenza per mantenere il numero di gradi di libertà.
+  Abbiamo così introdotto due potenziali che ci permettono di descrivere il campo senza singolarità; tuttavia, avendo ora delle variabili aggiuntive ($G_(mu nu)$), dobbiamo imporre un'equazione di consistenza per mantenere il numero di gradi di libertà. #footnote[Questo ricorda vagamente il caso della parametrizzazione del gruppo $S O(3)$ come accennato prima, infatti tutte le mappe con 3 parametri hanno qualche singolarità#footnote[DA RIVEDERE] ed in molti casi per comodità si preferisce eliminarla al costo di introdurre un'altra variabile ed una condizione di "normalizzazione", è questo un caso d'uso dei quaternioni.\
+  Analogamente tale trattazione che fa leva su due potenziali risulta particolarmente utile nelle trattazioni relativistiche. RIVEDERE MA FORSE MEGLIO USARE NOZIONI DI TOPOLOGIA]
 
-  Questo ricorda vagamente il caso della parametrizzazione del gruppo $S O(3)$ come accennato prima, infatti tutte le parametrizzazioni con 3 parametri hanno qualche singolarità#footnote[DA RIVEDERE] ed in molti casi per comodità si preferisce eliminarla al costo di introdurre un'altra variabile ed una condizione di "normalizzazione", è questo un caso d'uso dei quaternioni.\
-  Analogamente tale trattazione che fa leva su due potenziali risulta particolarmente utile nelle trattazioni relativistiche.
+  Questa trattazione con due potenziali potrebbe sembrare artificiosa, ma risulta essere particolarmente adatta ad essere applicata in ambito relativistico.
 
-  Notiamo infine che possiamo ritrovare il caso "normale" con una rotazione di $theta = -arctan(g\/e)$ in modo simile a quanto fatto nella prima slide.
+  Notiamo infine che in presenza di dyoni è possibile ritrovare il caso usuale con una rotazione, come accennato nella seconda slide.
 
   //Una generalizzazione interessante è quella di riscrivere le equazioni di Maxwell e la dinamica in modo simmetrico, introducendo due set di equazioni per i campi e le correnti elettriche e magnetiche.\
   //La costruzione dei potenziali non è banale, e Dirac propone una soluzione che introduce due potenziali, e questo ci induce a pensare di introdurre due potenziali.\
@@ -413,6 +434,22 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
   ]
 )
 
+#script[
+  Per quanto riguarda la ricerca di evidenze sperimentali, questo campo è stato attivo sin dalla prima proposta teorica di Dirac.\
+  Al giorno d'oggi alcune teorie oltre il modello standard ne prevedono l'esistenza e in particolare alcune "Grand Unified Theories" (GUTs) li contemplano in un range di energia tra la scala elettrodebole e la scala di Planck, quindi particelle pesanti.\
+
+  Da calcoli di elettrodinamica e considerando la regola di quantizzazione prima citata, si trova che questi avrebbero un *forte coupling elettromagnetico* e sarebbero particelle *altamente ionizzanti*.
+
+  Per ricercarli, una possibilità è quella di misurare direttamente i campi magnetici, e questo è possibile con apparati particolarmente sensibili costituiti da spire di materiale superconduttore
+
+  Altri esperimenti invece sfruttano la grande massa prevista e la loro alta energia persa per ionizzazione. Si può ad esempio ricercare segnali Cherenkov o segnali radio dovuti all'interazione con la materia.
+
+  Per quanto riguarda la ricerca nei collisori, l'LHC è un buon candidato perché la scala di energia potrebbe essere elevata.\
+  In particolare nei collisori di LHC sarebbe possibile osservarli direttamente guardando le traiettorie nel campo magnetico, oppure guardando le tracce sui calorimetri elettromagnetici.
+
+  Ad oggi comunque non sono state osservate evidenze dirette.
+]
+
 // ================================================================
 //                        RINGRAZIAMENTI
 // ================================================================
@@ -425,6 +462,10 @@ Attualmente non sono stati osservati monopoli magnetici, e alcuni esperimenti si
   #text(size: 1.25em)[Un sentito ringraziamento al Prof. Stefano Bolognesi per la sua preziosa guida, agli amici per il loro sostegno e alla mia famiglia per il loro infinito supporto.]
 
   #place(bottom, dy: -10pt, align(top, bibliography("bibliography.yaml")))
+]
+
+#script[
+  Vi ringrazio per l'attenzione.
 ]
 
 //ciao
