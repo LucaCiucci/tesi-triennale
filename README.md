@@ -5,6 +5,8 @@ This repository contains the code for the slides of my bachelor thesis in Physic
 
 [![Cover1](./out-svg/1.svg)](https://github.com/LucaCiucci/tesi-triennale/releases/tag/final)
 
+See the [final release page](https://github.com/LucaCiucci/tesi-triennale/releases/tag/final) to download the PDF.
+
 ## Compilation
 
 ```sh
