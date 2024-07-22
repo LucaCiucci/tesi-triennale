@@ -1,11 +1,20 @@
-# tesi-triennale
- Slides per la tesi triennale
+# tesi-triennale (Physics bachelor thesis)
+ Slides for my bachelor thesis in Physics.
+
+This repository contains the code for the slides of my bachelor thesis in Physics.
+
+[![Cover1](./out-svg/1.svg)](https://github.com/LucaCiucci/tesi-triennale/releases/tag/final)
+
+## Compilation
 
 ```sh
-typst compile main.typ
+typst compile main.typ main.pdf --input final=true
+typst compile main.typ main-with-script.pdf
+typst compile main.typ out-svg/{n}.svg --input final=true
 ```
+
+Dev:
 ```sh
 typst watch main.typ
+start .\main.pdf
 ```
-
-https://samuelj.li/complex-function-plotter/#sin(0.1)%20*%20z%20%2B%20sin(sin(0.1))%20*%20z%5E2%20%2B%20sin(sin(sin(0.1)))%20*%20z%5E3%20%2B%20sin(sin(sin(sin(0.1))))%20*%20z%5E4%20%2B%20sin(sin(sin(sin(sin(0.1)))))*z%5E5%20%2B%20sin(sin(sin(sin(sin(sin(0.1))))))*z%5E6

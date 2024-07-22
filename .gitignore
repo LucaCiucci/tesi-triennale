@@ -1,2 +1,4 @@
 *.pdf
-out-svg*
+/out-svg/*
+!/out-svg/1.svg*
+/out-svg.*
